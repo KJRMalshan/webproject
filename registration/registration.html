@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Conference Participation Form</title>  
+    <link rel="stylesheet" href="form.css"> 
+</head>  
+<body>  
+
+<div class="container">  
+    <h1>Conference Participation Form</h1>  
+    <form id="participationForm" action="submitu.php" method="POST" enctype="multipart/form-data">  
+        
+        <label for="name">Name with Initials:</label>  
+        <input type="text" id="name" name="name" required>  
+
+        <label for="category">Participation Category:</label>  
+        <select id="category" name="category" required>  
+            <option value="author">Author/Presenter</option>  
+            <option value="co-author">Co-Author</option>  
+            <option value="participant">Participant</option>  
+        </select>  
+
+        <label for="email">Email Address:</label>  
+        <input type="email" id="email" name="email" required>  
+
+        <label for="userpwd">Password:</label>
+        <input type="password" name="userpwd" class="input-field" id="passField" placeholder="Password" required>
+        <input type="password" class="input-field" id="confirmPass" placeholder="Confirm Password" required>
+
+        <label for="nic">NIC / Passport No:</label>  
+        <input type="text" id="nic" name="nic" required>  
+
+        <label for="mobile">Mobile Number:</label>  
+        <input type="text" id="mobile" name="mobile" required>  
+
+        <label for="country">Country:</label>  
+        <input type="text" id="country" name="country" required>  
+
+        <label for="paper_id">Paper ID:</label>  
+        <input type="text" id="paper_id" name="paper_id" required>  
+    
+        <label for="food_preference">Food Preference:</label>  
+        <select id="food_preference" name="food_preference" required>  
+            <option value="vegetarian">Vegetarian</option>  
+            <option value="non-vegetarian">Non-Vegetarian</option>  
+            <option value="vegan">Vegan</option>  
+            <option value="gluten-free">Gluten-Free</option>  
+            <option value="halal">Halal</option>  
+        </select>  
+
+        <label for="payment_proof">Payment Proof (Bank Slip):</label>  
+        <input type="file" id="payment_proof" name="payment_proof" accept=".jpg,.jpeg,.png,.pdf" required>  
+        
+        <button type="submit">Submit</button>  
+    </form>  
+</div> 
+<div class="login">
+    <p>Already registered? <a href="../login/login.html">Login here</a></p>
+    <P><a href="../main/home.html">Home</a></P>
+</div>
+<script src="form_val.js">  
+    document.getElementById('participationForm').addEventListener('submit', function(event) {  
+        let valid = true;  
+        const name = document.getElementById('name').value.trim();  
+
+        // Simple validation  
+        if (name.length === 0) {  
+            alert('Please enter your name.');  
+            valid = false;  
+        }  
+
+        // If not valid, prevent form submission  
+        if (!valid) {  
+            event.preventDefault();  
+        } else {  
+            alert('Form submitted successfully!');  
+        }  
+    });  
+</script>
+</body>  
+</html>

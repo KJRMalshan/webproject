@@ -1,0 +1,36 @@
+
+.speakers {
+    background-color: white;
+    text-align: center;
+    
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.speaker-card {
+    padding: 2rem;
+}
+
+.speaker-card img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid #166534;
+    margin-bottom: 1rem;
+}
+
+.speaker-card h4 {
+    color: #166534;
+    margin-bottom: 0.5rem;
+}
+
+.speaker-card p {
+    font-size: 0.9rem;
+    color: #666;
+}

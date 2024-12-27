@@ -1,0 +1,36 @@
+.dates {
+    background-color: white;
+    text-align: center;
+}
+
+.dates-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.date-item {
+    border-left: 4px solid #166534;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.extended {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.timezone {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.conference-date {
+    color: #166534;
+    font-weight: 600;
+}

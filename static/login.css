@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(10, 10, 30), rgb(20, 20, 50));
+    position: relative;
+}
+
+.form-box{
+    width: 95%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(15,15,40);
+    padding: 50px 70px;
+    text-align: center;
+}
+
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #ff6347;
+    position: relative;
+}
+
+.form-box h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #ff6347;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-group{
+    height: auto;
+}
+
+.input-field{
+	width: 100%;
+   	border: 0;
+   	outline: 0;
+   	padding: 20px 15px;
+   	font-size: 12px;
+   	color: #fff;
+    background-color: rgb(10,10,30);
+    margin: 15px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    max-height: 25px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+.input-field::placeholder{
+	color: #aaa;
+	font-size: 18px;
+}
+select{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    font-size: 15px;
+    color: #fff;
+    background-color: rgb(10,10,30);
+    margin: 15px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+label{
+    color: #ff6347;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+form p{
+	color: white;
+    text-align: left;
+    font-size: 15px;
+}
+
+form p a{
+    text-decoration: none;
+    color: #ff6347;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.button-group{
+	margin-top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button{
+    flex-basis: 45%;
+    background: #ff4500;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #ff4500;
+    outline: 0;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.button-group button:hover{
+	background: transparent;
+}
+
+.button-group button.disable{
+    border: 0;
+    color: #ff6347;
+    background: transparent;
+}
+
+.button-group button.disable:hover .link-text{
+	text-decoration: underline;
+}
+
+#err-msg {
+	border: 2px solid red;
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 8px;
+	color: #ff6347;
+	display: absolute;
+}

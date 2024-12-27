@@ -1,0 +1,195 @@
+
+*{
+	margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    
+}
+
+.logo-div {
+    display: inline-block;
+    width: 100%;
+    padding: 35px 0;
+	align-items: center;
+    background-image: linear-gradient(rgb(10, 10, 30), rgb(20, 20, 50));
+}
+
+.logo-div img{
+	width: 60px;
+	height: 60px;
+	margin: 0 20px 0 40px;
+}
+header{
+    text-align: center;
+}
+
+.logo-div p {
+	letter-spacing: 5px;
+	font-size: 30px;
+	color: white;
+}
+
+.main{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+    background-image: linear-gradient(rgb(10, 10, 30), rgb(20, 20, 50));
+    overflow: hidden;
+    background-image: url(../static/assets/ITUM-1.jpg);
+    
+}
+
+.main h1{
+	color: #0c63f8;
+	font-size: 40px;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 7%;
+    margin: 25px auto;
+}
+
+.main-content{
+    flex: 2;
+	padding: 30px;
+    margin: 0px 25px;
+}
+
+.main-content h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #181818;
+    
+}
+
+.main-content p{
+	text-align: justify;
+	font-size: 23px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    color: #ffffff;
+    padding-right: 4vw;
+    width: 75%;
+	border-radius: 10px;
+	background-color: rgba(10, 10, 35, 0.382);
+}
+
+.main-content button{
+    background-color: #5aa7ff;
+    color: #fff;
+    padding: 12px 24px;
+    border: 2px solid #5aa7ff;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.main-content button:hover{
+    background: transparent;
+}
+
+.side-image {
+    flex: 1;
+	margin-top: 10px;
+	align-self: flex-start;
+	transform: translate(60px,0);
+    width: 50%;
+    height: 100%;
+    margin-top: 30%;
+}
+
+.side-image img {
+	border-radius: 5px;
+}
+
+#hidden-para {
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: opacity 0.3s linear;
+}
+
+#arrow {
+	position: relative;
+	display: inline-block;
+	left: 5px;
+	bottom: 5px;
+	width: 12px;
+	height: 12px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+}
+
+.footer{
+	margin-top: auto;
+	width: 100%;
+    display: flex;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    background-image: linear-gradient(rgb(10, 10, 30), rgb(20, 20, 50));
+    justify-content: space-around;
+}
+
+.footlinks h4{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 30px 0;
+    position: relative;
+}
+
+
+.footlinks h4::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 5vw;
+    bottom: -7px;
+    border-radius: 5px;
+    background: white;
+}
+
+.footlinks ul li a{
+    display: block;
+    font-size: 17px;
+    color: #ccc;
+    margin-bottom: 10px;
+    transition: ease 0.30s;
+}
+
+.footlinks ul li a:hover{
+    transform: translate(5px);
+    color: #5aa7ff;
+}
+
+
+.social a{
+    font-size: 25px;
+    margin: 4px;
+    height: 40px;
+    width: 40px;
+    color: #5aa7ff;
+    background-color: #1a1a40;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: ease 0.30s;
+}
+
+.social a:hover{
+    transform: scale(1.2);
+}
+
+
+

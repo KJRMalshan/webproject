@@ -1,0 +1,89 @@
+<?php
+// filepath: /c:/wamp64/www/webproject/Templates/qrpage.php
+if (!isset($_GET['id'])) {
+    die("No ID provided.");
+}
+
+$id = $_GET['id'];
+
+// Database credentials
+$servername = "localhost";
+$username = "root";
+$password = ""; // Leave empty for WAMP's default setup
+$database = "conference";
+
+// Create a connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Prepare SQL query
+$stmt = $conn->prepare("SELECT * FROM registration WHERE id = ?");
+$stmt->bind_param("i", $id);
+
+// Execute and check
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    // User found
+    $user = $result->fetch_assoc();
+} else {
+    die("User not found.");
+}
+
+$stmt->close();
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your QR Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="btn btn-back" onclick="history.back();">
+                ← Back
+            </button>
+            <button class="btn btn-login" onclick="window.location.href='login.html';">
+                Login →
+            </button>
+        </header>
+
+        <main class="content">
+            <h1 class="title">Your QR Code</h1>
+            <p class="id">ID: <span id="qr-id"><?php echo htmlspecialchars($user['id']); ?></span></p>
+            
+            <div class="qr-container">
+                <img id="qr-image" alt="QR Code" class="qr-code">
+            </div>
+
+            <button id="btn-download" class="btn btn-download">
+                ↓ Download QR Code
+            </button>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script>
+        const qrData = "<?php echo htmlspecialchars('http://localhost/webproject/Templates/details.php?id=' . $user['id']); ?>";
+        const qrImage = document.getElementById("qr-image");
+        const downloadButton = document.getElementById("btn-download");
+
+        QRCode.toDataURL(qrData, { width: 256 }, function (err, url) {
+            if (err) throw err;
+            qrImage.src = url;
+            downloadButton.href = url;
+            downloadButton.download = "qr_code.png";
+        });
+    </script>
+</body>
+</html>

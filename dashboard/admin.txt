@@ -1,0 +1,150 @@
+<?php
+
+// Database connection (replace with your actual credentials)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "conference";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Function to get participant data
+function getParticipants($conn) {
+    $sql = "SELECT * FROM participants";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $participants = array();
+        while($row = $result->fetch_assoc()) {
+            $participants[] = $row;
+        }
+        return $participants;
+    } else {
+        return array();
+    }
+}
+
+// Function to get track data
+function getTracks($conn) {
+    $sql = "SELECT * FROM tracks";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $tracks = array();
+        while($row = $result->fetch_assoc()) {
+            $tracks[] = $row;
+        }
+        return $tracks;
+    } else {
+        return array();
+    }
+}
+
+// Function to get session attendance data
+function getSessionAttendance($conn) {
+    $sql = "SELECT sessions.session_name, tracks.track_name, COUNT(attendance.participant_id) as attendees 
+            FROM sessions
+            JOIN tracks ON sessions.track_id = tracks.track_id
+            LEFT JOIN attendance ON sessions.session_id = attendance.session_id
+            GROUP BY sessions.session_id, tracks.track_name";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $attendanceData = array();
+        while($row = $result->fetch_assoc()) {
+            $attendanceData[] = $row;
+        }
+        return $attendanceData;
+    } else {
+        return array();
+    }
+}
+
+// Get data from functions
+$participants = getParticipants($conn);
+$tracks = getTracks($conn);
+$attendanceData = getSessionAttendance($conn);
+
+$conn->close();
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conference Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Conference Admin Dashboard</h1>
+
+    <h2>Participants</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($participants as $participant): ?>
+                <tr>
+                    <td><?php echo $participant['participant_id']; ?></td>
+                    <td><?php echo $participant['name']; ?></td>
+                    <td><?php echo $participant['email']; ?></td>
+                    <td><?php echo $participant['phone']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <h2>Tracks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($tracks as $track): ?>
+                <tr>
+                    <td><?php echo $track['track_id']; ?></td>
+                    <td><?php echo $track['track_name']; ?></td>
+                    <td><?php echo $track['description']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <h2>Session Attendance</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Session Name</th>
+                <th>Track Name</th>
+                <th>Attendees</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($attendanceData as $data): ?>
+                <tr>
+                    <td><?php echo $data['session_name']; ?></td>
+                    <td><?php echo $data['track_name']; ?></td>
+                    <td><?php echo $data['attendees']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+</body>
+</html>

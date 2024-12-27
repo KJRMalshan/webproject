@@ -1,93 +1,171 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web project</title>
-    <!-- Google Fonts Link For Icons -->
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    
+    <title>Research Conference of ITUM</title>
+    <link rel="stylesheet" href="cssindex/main.css">
+    <link rel="stylesheet" href="cssindex/navbar.css">
+    <link rel="stylesheet" href="cssindex/hero.css">
+    <link rel="stylesheet" href="cssindex/dates.css">
+    <link rel="stylesheet" href="cssindex/registration.css">
+    <link rel="stylesheet" href="cssindex/speakers.css">
+    <link rel="stylesheet" href="cssindex/contact.css">
+    <link rel="stylesheet" href="cssindex/footer.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <span class="hamburger-btn material-symbols-rounded">Menu</span>
-            <a href="#" class="logo">
-                <img src="logo.jpg" alt="logo">
-                <h2>IRCITUM2024</h2>
-            </a>
-            <ul class="links">
-                <span class="close-btn material-symbols-rounded">close</span>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-            <button class="login-btn">LOG IN</button>
-        </nav>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="static/assets/profile.png" alt="ITUM Logo">
+            <p>ITUM Conference</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="tracks.html">Tracks</a></li>
+            <li><a href="#downloads">Downloads</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>3<sup>rd</sup> International Research Conference of ITUM - 2024</h1>
     </header>
-    <div class="blur-bg-overlay"></div>
-    <div class="form-popup">
-        <span class="close-btn material-symbols-rounded">close</span>
-        <div class="form-box login">
-            <div class="form-details">
-                <h2>Welcome Back</h2>
-                <p>Please log in using your personal information to stay connected with us.</p>
+
+    <section id="speakers" class="speakers">
+        <h2>Our Speakers</h2>
+        <div class="speakers-grid">
+            <div class="speaker-card chief-guest">
+                <h3>Chief Guest</h3>
+                <img src="https://irc.itum.mrt.ac.lk/upn.jpg" alt="Prof. U. P. Nawagamuwa">
+                <h4>Prof. U. P. Nawagamuwa</h4>
+                <p>Department of Civil Engineering,<br>University of Moratuwa</p>
             </div>
-            <div class="form-content">
-                <h2>LOGIN</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <a href="#" class="forgot-pass-link">Forgot password?</a>
-                    <button type="submit">Log In</button>
-                </form>
-                <div class="bottom-link">
-                    Don't have an account?
-                    <a href="#" id="signup-link">Signup</a>
+            <div class="speaker-card">
+                <h3>Keynote Speaker</h3>
+                <img src="https://irc.itum.mrt.ac.lk/id.jpg" alt="Dr. Ishara Dharmasena">
+                <h4>Dr. Ishara Dharmasena</h4>
+                <p>Wolfson School of Mechanical, Electrical & Manufacturing Engineering<br>Loughborough University, England</p>
+            </div>
+            <div class="speaker-card">
+                <h3>Special Speaker</h3>
+                <img src="https://irc.itum.mrt.ac.lk/wbmt.jpg" alt="Assoc. Prof. W. B. M. Thoradeniya">
+                <h4>Assoc. Prof. W. B. M. Thoradeniya</h4>
+                <p>Division of Civil Engineering Technology<br>Institute of Technology<br>University of Moratuwa</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="dates" class="dates">
+        <h2>Important Dates</h2>
+        <div class="dates-container">
+            <div class="date-item">
+                <h3>Extended Abstract Submission Deadline:</h3>
+                <p class="strike">20th September 2024 at 23.00 hrs</p>
+                <p class="extended">Extended till 23rd September 2024 at 23.00 hrs</p>
+                <p class="timezone">(Sri Lanka time | GMT +5.30)</p>
+            </div>
+            <div class="date-item">
+                <h3>Conference:</h3>
+                <p class="conference-date">18th December 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="registration">
+        <h2>Conference Registration</h2>
+        <div class="registration-container">
+            <div class="fees">
+                <h3>Registration Fee</h3>
+                <table>
+                    <tr>
+                        <td>Presenters (local)</td>
+                        <td>LKR 5000</td>
+                    </tr>
+                    <tr>
+                        <td>Presenters (foreign)</td>
+                        <td>USD 50</td>
+                    </tr>
+                    <tr>
+                        <td>Participants (local)</td>
+                        <td>LKR 2000</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="bank-details">
+                <h3>Mode of Payment: Bank Transfer</h3>
+                <table>
+                    <tr>
+                        <td>Bank Name</td>
+                        <td>Bank of Ceylon</td>
+                    </tr>
+                    <tr>
+                        <td>Account Name</td>
+                        <td>Institute of Technology University of Moratuwa</td>
+                    </tr>
+                    <tr>
+                        <td>Account Number</td>
+                        <td>83062337</td>
+                    </tr>
+                    <tr>
+                        <td>SWIFT Code</td>
+                        <td>BCEYLKLX 0568</td>
+                    </tr>
+                    <tr>
+                        <td>Branch</td>
+                        <td>Homagama branch</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="button">
+            <a href="../registration/registration.html" class="register-button">Register Now</a>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <img src="https://irc.itum.mrt.ac.lk/mmpds.jpg" alt="Mrs. M. M. P. D. Samarasekara">
+                <h4>Head - Research Unit</h4>
+                <p>Mrs. M. M. P. D. Samarasekara</p>
+                <a href="mailto:researchunit@itum.mrt.ac.lk">researchunit@itum.mrt.ac.lk</a>
+            </div>
+            <div class="contact-card">
+                <img src="https://irc.itum.mrt.ac.lk/kg.jpg" alt="Dr. (Mrs.) Kalpana Galappaththi">
+                <h4>Conference Chair</h4>
+                <p>Dr. (Mrs.) Kalpana Galappaththi</p>
+                <a href="mailto:kgalappaththi@itum.mrt.ac.lk">kgalappaththi@itum.mrt.ac.lk</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank"><i class='bx bxl-github'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-youtube'></i></a>
+                    <a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
                 </div>
             </div>
         </div>
-        <div class="form-box signup">
-            <div class="form-details">
-                <h2>Create Account</h2>
-                <p>To become a part of our community, please sign up using your personal information.</p>
-            </div>
-            <div class="form-content">
-                <h2>SIGNUP</h2>
-                <form action="#">
-                    <div class="input-field">
-                        <input type="text" required>
-                        <label>Enter your email</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" required>
-                        <label>Create password</label>
-                    </div>
-                    <div class="policy-text">
-                        <input type="checkbox" id="policy">
-                        <label for="policy">
-                            I agree the
-                            <a href="#" class="option">Terms & Conditions</a>
-                        </label>
-                    </div>
-                    <button type="submit">Sign Up</button>
-                </form>
-                <div class="bottom-link">
-                    Already have an account? 
-                    <a href="#" id="login-link">Login</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    </footer>
 </body>
 </html>

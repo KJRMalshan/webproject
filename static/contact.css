@@ -1,0 +1,101 @@
+*{
+	margin: 0;
+    box-sizing:border-box;
+}
+
+body{
+	font-family: sans-serif;
+    background-image: linear-gradient(rgb(10, 10, 30), rgb(20, 20, 50));
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.form h2{
+    font-weight: bold;
+    color: #ff6347;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.form hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #ff6347;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.inputs{
+    width: 35vw;
+    height: 8vh;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    color: #fff;
+    background-color: rgb(10,10,30);
+    border-radius: 10px;
+}
+
+.inputs:focus{
+    border: 1px solid #ff6347;
+}
+
+.inputs::placeholder{
+	font-size: 18px;
+    color: #bbb;
+}
+
+.form textarea{
+    height: 20vh;
+    padding-top: 15px;
+    border-radius: 10px;
+    resize: none;
+}
+
+.form button{
+	display: flex;
+	align-items: center;
+	padding: 15px 30px;
+	font-size: 20px;
+	color: #fff;
+	gap: 10px;
+	border: 2px solid #ff4500;
+	border-radius: 50px;
+	background: #ff4500;
+	cursor: pointer;
+	transition: ease 0.3s;
+}
+
+.form button:hover{
+	background: transparent;
+}
+
+.form button img{
+    height: 15px;
+}
+
+.contact-right img{
+    width: 500px;
+}
+
+@media (max-width:800px) {
+    .contact-inputs{
+        width: 80vw;
+    }
+    .contact-right{
+        display: none;
+    }
+}

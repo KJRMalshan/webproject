@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>About Us</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/about.css">
+    	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+		<div id="navbar-placeholder"></div>
+		<!--<script>
+			document.getElementById("navbar-placeholder").innerHTML = fetch("navbar.html")
+				.then(response => response.text())
+				.then(data => document.getElementById("navbar-placeholder").innerHTML = data);
+		</script> -->
+
+    </head>
+    
+    <body>
+		<header class="logo-div">
+			<p>International Research Conference of ITUM - 2024.</p>
+		</header>
+	
+    	<section class="main">
+		    <div class="container">
+		        <div class="main-content">
+		            <h2>Welcome To International Research Conference of ITUM - 2024.</h2>
+		            <p>
+						The Institute of Technology, University of Moratuwa (ITUM), launched its first-ever research symposium in 2013 with the goal of cultivating a robust research culture within the institution. Since then, it has become an annual hallmark of the ITUM calendar serving as a distinguished platform to articulate and disseminate diverse and intricate research endeavours.</p>
+									
+					</p>
+					<p>
+						From its inception, the research committees of ITUM adeptly organized six symposiums, thereby facilitating a scholarly environment where ITUM academic staff could document and engage in meaningful discourse regarding their multifaceted, subject-specific research projects. In a significant expansion of its vision, the 2019 symposium introduced a limited number of slots for industry researchers, granting them the opportunity to share their invaluable professional insights into industry-related research.</p>
+												
+					</p>
+					<p>
+						The establishment of the ITUM Research Unit (ITUM-RU) in 2020 further broadened the horizons of research at ITUM. In 2021, the symposium was opened to researchers from other esteemed higher education institutions, universities, and industries across Sri Lanka. However, the 2021 symposium was conducted in a virtual format in response to the global pandemic, ensuring the continuity of scholarly exchange.</p>
+											
+					</p>
+					<p>
+						In 2022, the ITUM-RU extended the symposium’s reach by inviting international scholars, thereby fostering global collaboration in various technology-related domains. This pivotal year culminated in the renaming of the symposium to the "International Research Conference of ITUM 2022," reflecting its enhanced scope and significance.</p>
+									
+					</p>
+					<div id="hidden-para">
+						<h2> </h2>
+						<p> The following year, 2023, witnessed a further elevation of the conference, as ITUM-RU collaborated with the International Institute of Management Sciences (IIMS) under the theme "Industry 5.0 – Prospect and Retrospect." This partnership underscored our commitment to addressing contemporary challenges and opportunities in the field.</p>
+					</p>
+					<p>
+						ITUM-RU cordially invites local as well as foreign scholars from all disciplines to contribute their insights and research findings to foster collaboration and advance the frontiers of sustainable engineering in the following tracks.</p>
+										
+					</p>
+					</div>
+					
+	                <button id="read-button">
+						<span id="text">Read More</span>
+						<span id="arrow"></span>
+					</button>
+		        </div>
+		        
+				<!-- class="side-image">
+					<img src="../static/assets/side.jpg">
+				</div> -->
+			</div>
+		</section>
+		
+		<section class="footer">
+			<div class="footlinks">
+		   	    <h4>Quick Links</h4>
+		        <ul>
+		  	        <li><a href="home.html">Home</a></li>
+		            <li><a href="../login/login.html">Login</li>
+		            <li><a href="contact.html">Contact Us</a></li>
+		   		</ul>
+			</div>
+	
+	        <div class="footlinks">
+	    	    <h4>Connect</h4>
+	    	    <div class="social">
+					<!-- Add socials if exist, else remove-->
+	    	    	<a href="" target="_blank"><i class='bx bxl-github'></i></a>
+	    	        <a href="" target="_blank"><i class='bx bxl-instagram' ></i></a>
+	                <a href="" target="_blank"><i class='bx bxl-twitter' ></i></a>
+	                <a href="" target="_blank"><i class='bx bxl-youtube' ></i></a>
+	            </div>
+	    	</div>
+        </section>
+    </body>
+	
+	<script>
+		let moreDiv = document.getElementById("hidden-para");
+		let readbtn = document.getElementById("read-button");
+		let arrowSpan = document.getElementById("arrow");
+		let textSpan = document.getElementById("text");
+
+		readbtn.onclick = function(){
+			if (moreDiv.style.opacity == 0) {
+				moreDiv.style.height = "auto";
+				moreDiv.style.opacity = 1;
+				arrowSpan.style.bottom = 0;
+				arrowSpan.style.transform = "rotate(225deg)";
+				textSpan.innerHTML = "Read Less";
+			}
+			else {
+				moreDiv.style.height = 0;
+				moreDiv.style.opacity = 0;
+				arrowSpan.style.bottom = "5px";
+				arrowSpan.style.transform = "rotate(45deg)";
+				textSpan.innerHTML = "Read More";
+			}
+		}
+	</script>
+</html>
