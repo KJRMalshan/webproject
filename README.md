@@ -32,6 +32,19 @@ This repository contains the website files for the **3rd International Research 
 - **Responsive Design**: Ensures usability on various devices.
 
 ## How to Use
+you should use software like XAMPP, MAMP, or WAMP, which provides an Apache server to run PHP files.
+
+Install a Local Server:
+
+Download and install XAMPP or WAMP.
+Place Your this Files in the Server Directory:
+
+For XAMPP, place your PHP file in the htdocs folder (usually found in C:\xampp\htdocs).
+For wamp, use the www folder inside the wampserver.
+Start the Server:
+
+Launch the control panel for XAMPP or WAMP and start the Apache server.
+Access the File:
 
 1. Clone this repository:
    ```bash
