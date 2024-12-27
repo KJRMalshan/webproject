@@ -1,3 +1,52 @@
+<?php 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "conference";
+ 
+// Create connection 
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Create database
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database:" .$conn->error;
+}
+
+// Select the database
+$conn->select_db($dbname);
+
+// Create table
+$sql = "CREATE TABLE IF NOT EXISTS registration (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    userpwd VARCHAR(255) NOT NULL,
+    nic VARCHAR(255) NOT NULL,
+    mobile VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    paper_id VARCHAR(255) NOT NULL,
+    session VARCHAR(255) NOT NULL
+);";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$conn->close();
+
+
+?>
 <!DOCTYPE html>
 <html>
 <style rel="stylesheet" type="submitu.css"></style>

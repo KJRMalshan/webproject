@@ -1,4 +1,40 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "conference";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL to create table
+$sql = "CREATE TABLE abc (
+    track_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    track_name VARCHAR(30) NOT NULL,
+    session_id INT(6) UNSIGNED,
+    session_name VARCHAR(30),
+    title VARCHAR(50),
+    speaker VARCHAR(50),
+    timing DATETIME,
+    venue VARCHAR(50),
+    capacity INT(6)
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table abc created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$conn->close();
+?>
+
+<?php
 // Database connection
 $servername = "localhost";
 $username = "root";
