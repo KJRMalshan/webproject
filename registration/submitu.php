@@ -40,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mobile = $_POST['mobile'];
     $country = $_POST['country'];
     $paper_id = $_POST['paper_id'];
-    $tracks = isset($_POST['tracks']) ? implode(", ", $_POST['tracks']) : "";
-    $food_preference = $_POST['food_preference'];
+    $session = $_POST['session'];
+    
 
     // Check for duplicate entry
     $check_stmt = $conn->prepare("SELECT * FROM registration WHERE email = ? OR nic = ?");
@@ -79,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Hash the password before storing it
     //$hashed_password = password_hash($userpwd, PASSWORD_DEFAULT);
     
-    $stmt = $conn->prepare("INSERT INTO registration (role, name, category, email, userpwd, nic, mobile, country, paper_id, tracks, food_preference, payment_proof) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssssss", $role, $name, $category, $email, $userpwd, $nic, $mobile, $country, $paper_id, $tracks, $food_preference, $payment_proof);
+    $stmt = $conn->prepare("INSERT INTO registration (role, name, category, email, userpwd, nic, mobile, country, paper_id, session, payment_proof) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssssss", $role, $name, $category, $email, $userpwd, $nic, $mobile, $country, $paper_id, $session, $payment_proof);
 
     // Execute and check
     if ($stmt->execute()) {
@@ -134,9 +134,9 @@ $conn->close();
 </script>
 <footer>
     <div class="login">
-        <p>Already registered? <a href="../login/login.html">Login here</a></p>
+        <p>Already registered? <a href="../login.html">Login here</a></p>
     </div>
-    <a href="home.html">Back to Home</a> 
+    <a href="../index.html">Back to Home</a> 
 </footer>
 </body>
 </html>

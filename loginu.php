@@ -31,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         if ($password == $user['userpwd']) { // Compare plain text passwords
             if ($user['role'] == 'admin' || $password == 'admin') {
-                header("Location: ../admin/ademinu.php");
+                header("Location: admin/ademinu.php");
                 exit();
             } else {
                 // Redirect to user.php
-                header("Location: ../dashboard/user.php");
+                header("Location: admin/userdash.php");
                 exit();
             }
         } else {

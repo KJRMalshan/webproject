@@ -17,6 +17,7 @@ $id = $_GET['id'];
 
 // SQL to delete a record
 $sql = "DELETE FROM tracks_and_sessions WHERE track_id = $id";
+$sql = "DELETE FROM registration WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";

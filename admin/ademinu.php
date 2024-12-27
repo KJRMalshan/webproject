@@ -30,21 +30,21 @@ if ($conn->connect_error) {
                 <th>Participant_ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Qr code</th>
+               <!-- <th>Qr code</th> -->
                 <th>Session Preferences</th>
                 <th>Actions</th>
             </tr>
             <?php
-            $result = $conn->query("SELECT participant_id, name, email, QR_code, sessions_registered FROM participants");
+            $result = $conn->query("SELECT id, name, email, session FROM registration");
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row['participant_id'] . "</td>";
+                    echo "<td>" . $row['id'] . "</td>";
                     echo "<td>" . $row['name'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . $row['QR_code'] . "</td>";
-                    echo "<td>" . $row['sessions_registered'] . "</td>";
-                    echo "<td><a href='delete_track.php?id=" . $row['participant_id'] . "'>Delete</a></td>";
+                   // echo "<td>" . $row['QR_code'] . "</td>";
+                    echo "<td>" . $row['session'] . "</td>";
+                    echo "<td><a href='delete_track.php?id=" . $row['id'] . "'>Delete</a></td>";
                     echo "</tr>";
                 }
             } else {
@@ -141,8 +141,8 @@ if ($conn->connect_error) {
 </body>
 <footer>
     <div class="end">
-        <a href="login.html">Logout</a>
-        <a href="home.htmll">Home</a>
+        <a href="../login.html">Logout</a>
+        <a href="../index.html">Home</a>
     </div>
 </footer>
 </html>
