@@ -35,4 +35,4 @@ This repository contains the website files for the **3rd International Research 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repo/itum-conference-2024.git
+   git clone https://github.com/KJRMalshan/webproject.git
